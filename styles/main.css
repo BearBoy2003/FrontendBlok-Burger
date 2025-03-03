@@ -27,6 +27,7 @@ a {
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
+    box-sizing: border-box;
 }
 
 /* Header */
@@ -38,7 +39,7 @@ a {
 .header-wrapper {
     display: flex;
     align-items: center;
-    gap: 196px;
+    gap: 56px;
     padding-top: 26px;
     padding-bottom: 26px;
 }
@@ -56,6 +57,7 @@ a {
     display: flex;
     flex-grow: 1;
     gap: 47px;
+    margin-left: min(10vw, 140px);
 }
 
 .nav-link {
@@ -406,6 +408,7 @@ a {
 .footer-wrapper {
     display: flex;
     justify-content: space-between;
+    gap: 15px;
 }
 
 .footer-logo {
@@ -487,6 +490,10 @@ a {
     text-transform: uppercase;
     margin-top: 12px;
     transition: var(--tr);
+}
+
+.footer-tel._mobile {
+    display: none;
 }
 
 .footer-tel:hover {
@@ -593,4 +600,87 @@ a {
 
 .contact-tel:hover {
     color: var(--accent-light);
+}
+
+/* Media */
+
+@media (max-width: 1080px) {
+    .header-wrapper {
+        gap: 40px;
+    }
+
+    .nav {
+        margin-left: 0;
+        gap: min(3vw, 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 150px;
+        height: 47.81px;
+    }
+
+    .header-wrapper {
+        gap: 45px;
+    }
+
+    .nav {
+        gap: 22px;
+    }
+
+    .banner {
+        margin-top: 72px;
+    }
+
+    .banner-wrapper {
+        padding: 100px 40px;
+    }
+
+    .menu-header {
+        margin-top: 80px;
+    }
+
+    .menu-box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .menu-box._add {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-item._add {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .menu-item._add .menu-thumb {
+        flex-basis: calc(60% - 20px);
+        height: 260px;
+        margin-bottom: 0;
+    }
+
+    .menu-item._add .menu-info {
+        flex-basis: 40%;
+    }
+
+    .footer {
+        padding-top: 62px;
+        padding-bottom: 71px;
+    }
+
+    .footer-nav {
+        margin-bottom: 20px;
+    }
+
+    .footer-item:last-child {
+        display: none;
+    }
+
+    .footer-tel._mobile {
+        display: block;
+        text-align: left;
+    }
 }
